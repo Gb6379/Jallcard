@@ -1,4 +1,4 @@
-package br.gbr.SpringStock.Controllers;
+package br.gbr.JallcardBackend.Controllers;
 
 import java.util.HashSet;
 import java.util.List;
@@ -24,17 +24,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.gbr.SpringStock.Enums.Roles;
-import br.gbr.SpringStock.Jwt.JwtUtils;
-import br.gbr.SpringStock.Models.Role;
-import br.gbr.SpringStock.Models.User;
-import br.gbr.SpringStock.Repositories.RoleRepository;
-import br.gbr.SpringStock.Repositories.UserRepository;
-import br.gbr.SpringStock.Request.LoginRequest;
-import br.gbr.SpringStock.Request.SignupRequest;
-import br.gbr.SpringStock.Response.JwtResponse;
-import br.gbr.SpringStock.Response.MessageResponse;
-import br.gbr.SpringStock.Services.CustomUserDetails;
+import br.gbr.JallcardBackend.Enums.Roles;
+import br.gbr.JallcardBackend.Jwt.JwtUtils;
+import br.gbr.JallcardBackend.Models.Role;
+import br.gbr.JallcardBackend.Models.User;
+import br.gbr.JallcardBackend.Repositories.RoleRepository;
+import br.gbr.JallcardBackend.Repositories.UserRepository;
+import br.gbr.JallcardBackend.Request.LoginRequest;
+import br.gbr.JallcardBackend.Request.SignupRequest;
+import br.gbr.JallcardBackend.Response.JwtResponse;
+import br.gbr.JallcardBackend.Response.MessageResponse;
+import br.gbr.JallcardBackend.Services.CustomUserDetails;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -80,14 +80,6 @@ public class AuthController {
 		
 		return ResponseEntity.ok(new JwtResponse(jwt,"Bearer", customUserDetails.getId()
 				,customUserDetails.getUsername(), roles));
-		/*
-		
-		
-		return ResponseEntity.ok(new JwtResponse(jwt, 
-								customUserDetails.getId(), 
-								customUserDetails.getUsername(), 
-								customUserDetails.getEmail(), 
-								roles));*/
 		
 	}
 	
@@ -97,10 +89,6 @@ public class AuthController {
 			return ResponseEntity.badRequest().body(new MessageResponse("Error: Username already in use"));
 		}
 		
-	/*	if(userRepository.existsByEmail(signUpRequest.getEmail())) {
-			return ResponseEntity.badRequest().body(new MessageResponse("Error: Email already in use"));
-		}*/
-		//BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(BCryptVersion.$2Y);
 		//new User acc
 		System.out.println("" + signUpRequest.getPassword());
 		System.out.println("" + signUpRequest.getUsername());
@@ -117,7 +105,7 @@ public class AuthController {
 		} else {
 			strRoles.forEach(role -> {
 				switch(role) {
-				case "admin":
+			/*	case "admin":
 						Role adminRole = roleRepository.findByName(Roles.ROLE_ADMIN).orElseThrow(() -> new RuntimeException("Error: role is not foun"));
 						roles.add(adminRole);
 						
@@ -126,7 +114,7 @@ public class AuthController {
 					Role modRole = roleRepository.findByName(Roles.ROLE_MODERATOR).orElseThrow(() -> new RuntimeException("Error: role is not found."));
 					roles.add(modRole);
 					
-					break;
+					break;*/
 					
 				default: 
 					Role userRole = roleRepository.findByName(Roles.ROLE_USER).orElseThrow(() -> new RuntimeException("Error: Role is not found."));

@@ -1,4 +1,4 @@
-package br.gbr.SpringStock.Controllers;
+package br.gbr.JallcardBackend.Controllers;
 
 import javax.annotation.security.RolesAllowed;
 

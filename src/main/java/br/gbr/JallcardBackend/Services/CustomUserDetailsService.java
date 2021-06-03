@@ -1,4 +1,4 @@
-package br.gbr.SpringStock.Services;
+package br.gbr.JallcardBackend.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -8,9 +8,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.gbr.SpringStock.Models.User;
-import br.gbr.SpringStock.Repositories.UserRepository;
-import br.gbr.SpringStock.Request.SignupRequest;
+import br.gbr.JallcardBackend.Models.User;
+import br.gbr.JallcardBackend.Repositories.UserRepository;
+import br.gbr.JallcardBackend.Request.SignupRequest;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {

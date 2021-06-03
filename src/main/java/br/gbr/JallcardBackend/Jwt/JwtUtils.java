@@ -1,4 +1,4 @@
-package br.gbr.SpringStock.Jwt;
+package br.gbr.JallcardBackend.Jwt;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
-import br.gbr.SpringStock.Services.CustomUserDetails;
+import br.gbr.JallcardBackend.Services.CustomUserDetails;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.SignatureAlgorithm;

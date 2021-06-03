@@ -1,4 +1,4 @@
-package br.gbr.SpringStock.Models;
+package br.gbr.JallcardBackend.Models;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import br.gbr.SpringStock.Enums.Roles;
+import br.gbr.JallcardBackend.Enums.Roles;
 
 @Entity
 public class Role {

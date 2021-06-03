@@ -1,4 +1,4 @@
-package br.gbr.SpringStock.Controllers;
+package br.gbr.JallcardBackend.Controllers;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.gbr.SpringStock.Models.User;
-import br.gbr.SpringStock.Repositories.UserRepository;
+import br.gbr.JallcardBackend.Models.User;
+import br.gbr.JallcardBackend.Repositories.UserRepository;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController

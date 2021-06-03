@@ -1,12 +1,12 @@
-package br.gbr.SpringStock.Repositories;
+package br.gbr.JallcardBackend.Repositories;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import br.gbr.SpringStock.Enums.Roles;
-import br.gbr.SpringStock.Models.Role;
+import br.gbr.JallcardBackend.Enums.Roles;
+import br.gbr.JallcardBackend.Models.Role;
 
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Long>{

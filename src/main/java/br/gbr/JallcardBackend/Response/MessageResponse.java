@@ -1,4 +1,4 @@
-package br.gbr.SpringStock.Response;
+package br.gbr.JallcardBackend.Response;
 
 public class MessageResponse {
 	

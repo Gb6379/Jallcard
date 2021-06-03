@@ -1,4 +1,4 @@
-package br.gbr.SpringStock.Jwt;
+package br.gbr.JallcardBackend.Jwt;
 
 import java.io.IOException;
 
@@ -19,7 +19,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import br.gbr.SpringStock.Services.CustomUserDetailsService;
+import br.gbr.JallcardBackend.Services.CustomUserDetailsService;
 import io.jsonwebtoken.JwtException;
 
 public class AuthTokenFilter extends OncePerRequestFilter {
@@ -37,12 +37,8 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 			throws ServletException, IOException {
 		 try {
 			 String jwt = getJwt(request);
-			 System.out.println("nao entrei");
 			 if (jwt != null) {
-				 System.out.println("ENTREI");
-				 
 				 		 //getusername as of token given
-				 		 System.out.println("BAKAIARU" + jwt);
 						 String username = jwtUtils.getUserNameFromJwtToken(jwt);
 						 //System.out.println("username" + username);
 						 //user details core

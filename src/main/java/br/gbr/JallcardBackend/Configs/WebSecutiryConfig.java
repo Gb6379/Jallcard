@@ -1,4 +1,4 @@
-package br.gbr.SpringStock.Configs;
+package br.gbr.JallcardBackend.Configs;
 
 
 import javax.sql.DataSource;
@@ -17,9 +17,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import br.gbr.SpringStock.Jwt.AuthEntryPointJwt;
-import br.gbr.SpringStock.Jwt.AuthTokenFilter;
-import br.gbr.SpringStock.Services.CustomUserDetailsService;
+import br.gbr.JallcardBackend.Jwt.AuthEntryPointJwt;
+import br.gbr.JallcardBackend.Jwt.AuthTokenFilter;
+import br.gbr.JallcardBackend.Services.CustomUserDetailsService;
 
 @Configuration
 @EnableWebSecurity
@@ -42,7 +42,7 @@ public class WebSecutiryConfig extends WebSecurityConfigurerAdapter {
 	
 	
 	@Override
-	public void configure(AuthenticationManagerBuilder authManagerBuilder) throws Exception {	
+	public void configure(AuthenticationManagerBuilder authManagerBuilder) throws Exception {
 		authManagerBuilder.userDetailsService(customUserDetailsService).passwordEncoder(passwordEncoder());
 	}
 	
@@ -64,7 +64,6 @@ public class WebSecutiryConfig extends WebSecurityConfigurerAdapter {
         .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
         .authorizeRequests().antMatchers("/api/auth/**").permitAll()
         .antMatchers("/api/test/**").permitAll()
-        //.antMatchers("/api/user/**").permitAll()
         .anyRequest().authenticated();
 
 			

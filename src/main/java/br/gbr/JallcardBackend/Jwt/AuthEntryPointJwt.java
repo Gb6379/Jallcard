@@ -1,4 +1,4 @@
-package br.gbr.SpringStock.Jwt;
+package br.gbr.JallcardBackend.Jwt;
 
 import java.io.IOException;
 

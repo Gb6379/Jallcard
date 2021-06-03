@@ -1,4 +1,4 @@
-package br.gbr.SpringStock.Response;
+package br.gbr.JallcardBackend.Response;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package br.gbr.SpringStock.Services;
+package br.gbr.JallcardBackend.Services;
 
 import java.util.Collection;
 import java.util.List;
@@ -13,7 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import br.gbr.SpringStock.Models.User;
+import br.gbr.JallcardBackend.Models.User;
 
 public class CustomUserDetails implements UserDetails {
 	

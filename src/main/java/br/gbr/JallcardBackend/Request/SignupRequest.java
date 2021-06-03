@@ -1,4 +1,4 @@
-package br.gbr.SpringStock.Request;
+package br.gbr.JallcardBackend.Request;
 
 import java.util.Set;
 

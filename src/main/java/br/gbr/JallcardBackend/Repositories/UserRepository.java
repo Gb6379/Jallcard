@@ -1,11 +1,11 @@
-package br.gbr.SpringStock.Repositories;
+package br.gbr.JallcardBackend.Repositories;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import br.gbr.SpringStock.Models.User;
+import br.gbr.JallcardBackend.Models.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{

@@ -1,8 +1,10 @@
-package br.gbr.SpringStock.Models;
+package br.gbr.JallcardBackend.Models;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,9 +14,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.validator.constraints.Length;
 
 
@@ -39,6 +44,10 @@ public class User {
 	@JoinTable( name="user_roles", joinColumns = @JoinColumn(name="user_id"),
 	inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<>();
+	
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "userForPhonebook")
+	@Fetch(value = FetchMode.SUBSELECT)
+	private Collection<Contact> allContacts;
 	
 	public User() {
 		
