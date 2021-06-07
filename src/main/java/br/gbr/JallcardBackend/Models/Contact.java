@@ -20,6 +20,9 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 @Entity
 public class Contact {
@@ -38,6 +41,8 @@ public class Contact {
 	
 	private String kinship;
 	
+   @JsonProperty("phones")
+   @JsonFormat(with = JsonFormat.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
    @ElementCollection	
     private List<String> phones = new ArrayList<String>();
 
