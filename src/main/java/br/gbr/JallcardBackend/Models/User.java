@@ -45,10 +45,7 @@ public class User {
 	inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<>();
 	
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "userForPhonebook")
-	@Fetch(value = FetchMode.SUBSELECT)
-	private Collection<Contact> allContacts;
-	
+
 	public User() {
 		
 	}

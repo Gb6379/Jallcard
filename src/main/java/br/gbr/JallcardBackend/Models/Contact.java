@@ -1,16 +1,25 @@
 package br.gbr.JallcardBackend.Models;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.Convert;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+
 
 @Entity
 public class Contact {
@@ -22,17 +31,20 @@ public class Contact {
 	@Column(nullable=false)
 	private String name;
 	
-	@Column(nullable=false)
 	private String lastName;
 	
-	@Column(nullable=false)
+	//@Column(nullable=false)
 	private String birthDate;
 	
 	private String kinship;
 	
-	@JoinColumn(name = "users_id")
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
-	private User userForPhonebook;
+   @ElementCollection	
+    private List<String> phones = new ArrayList<String>();
+
+    public Contact() {
+    	
+    }
+	
 
 	public Long getId() {
 		return id;
@@ -74,13 +86,17 @@ public class Contact {
 		this.kinship = kinship;
 	}
 
-	public User getUserForPhonebook() {
-		return userForPhonebook;
+    @ElementCollection
+	public List<String> getPhones() {
+		return phones;
 	}
 
-	public void setUserForPhonebook(User userForPhonebook) {
-		this.userForPhonebook = userForPhonebook;
+	public void setPhones(List<String> phones) {
+		this.phones = phones;
 	}
+	
+
+
 	
 	
 

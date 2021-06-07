@@ -31,17 +31,11 @@ public class JwtUtils {
 	private int jwtEpirationMs;
 	
 	public String generateJwtToken(Authentication auth) {
-		
-		Calendar cal = Calendar.getInstance(Locale.US);
-        Calendar cal1 = Calendar.getInstance(Locale.US);
-        cal1.setTime(cal.getTime());
-        cal1.add(Calendar.SECOND, 300);
+
 		CustomUserDetails userPrincipal = (CustomUserDetails) auth.getPrincipal();
 		
 		return Jwts.builder()
 				.setSubject((userPrincipal.getUsername()))
-				.setIssuedAt(new Date((new Date().getTime())))
-				.setExpiration(new Date((new Date().getTime() + jwtEpirationMs)))
 				.signWith(SignatureAlgorithm.HS512, jwtSecret)
 				.compact();
 	}
